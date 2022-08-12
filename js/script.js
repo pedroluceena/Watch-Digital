@@ -8,20 +8,40 @@ const watch = setInterval(function time() {
     let min = dateToday.getMinutes();
     let s = dateToday.getSeconds();
 
-    if ( hr < 10) hr = '0' + hr;
-
-    if ( min < 10) hr = '0' + min;
-
-    if ( s < 10) hr = '0' + s;
-
-    hours.textContent = hr;
-    minutes.textContent = min;
-    seconds.textContent = s;
+    hours.textContent = String(hr).padStart(2, '0');
+    minutes.textContent = String(min).padStart(2, '0');
+    seconds.textContent = String(s).padStart(2, '0');
 })
 
-// const $html = document.querySelector('html');
-//const $checkbox = document.querySelector('#switch')
 
-//$checkbox.addEventListener('change', function() {
- //   $html.classList.toggle('dark-mode')
-//})
+// Dark Mode
+const toggleEl = document.querySelector('.toggle');
+const childToogleEl = document.querySelector('.toggle div');
+
+let isDark = false;
+
+const handleDarkMode = () => {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  }
+
+const hundleToggle = (e) => {
+    handleDarkMode()
+    const element = toggleEl;
+    
+    if(isDark) {
+        element.style.justifyContent = 'flex-start'
+        element.style.background = 'black'
+        childToogleEl.style.background = 'white'
+        isDark = false
+    }else {
+        element.style.justifyContent = 'flex-end'
+        element.style.background = 'white'
+        childToogleEl.style.background = 'black'
+        isDark = true
+    }
+    
+};
+
+toggleEl.addEventListener('click', hundleToggle);
+childToogleEl.addEventListener('click', hundleToggle);
