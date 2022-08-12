@@ -19,7 +19,9 @@ const watch = setInterval(function time() {
     seconds.textContent = s;
 })
 
-function darkMode() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-}
+// const $html = document.querySelector('html');
+//const $checkbox = document.querySelector('#switch')
+
+//$checkbox.addEventListener('change', function() {
+ //   $html.classList.toggle('dark-mode')
+//})

@@ -6,18 +6,49 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+:root {
+    --body: #fff;
+    --body-color: #000;
+}
+
+.dark-mode:root {
+    --body: #000;
+    --body-color: #fff;
+}
+
 body {
     height: 100vh;
-    background: white;
+    background-color: var(--body);
+    color: var(--body-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
-.dark-mode {
-    background-color: black;
-    color: white;
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    display: none;visibility: hidden;
 }
+
+.check {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #000;
+    cursor: pointer;
+    border-radius: 150px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+
+input[type="checkbox"]:checked ~ .check
+{
+    background: #fff;
+    box-shadow: 0 0 0 1200px;
+}
+
 
 .watch {
     display: flex;
@@ -52,3 +83,4 @@ body {
 .watch span.time {
     font-size: 10px;
 }
+
