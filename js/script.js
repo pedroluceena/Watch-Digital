@@ -1,7 +1,9 @@
+
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 
+// Logic Watch
 const watch = setInterval(function time() {
     let dateToday = new Date();
     let hr = dateToday.getHours();

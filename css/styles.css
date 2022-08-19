@@ -16,6 +16,9 @@ body {
     gap: 15px;
     align-items: center;
     justify-content: center;
+
+    transition: 2s all ease;
+    overflow: hidden;
     
 }
 
