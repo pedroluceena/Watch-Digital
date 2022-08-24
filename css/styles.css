@@ -22,6 +22,7 @@ body {
     
 }
 
+/*Darkmode e Lightmode*/
 
 .toggle {
     width: 30px;
@@ -49,6 +50,8 @@ body {
     background-color: black;
     color: white;
 }
+
+/*Style do Rélogio*/
 
 .watch {
     display: flex;
@@ -84,3 +87,38 @@ body {
     font-size: 10px;
 }
 
+/*Alarme Rélogio*/
+
+input[type=time] {
+    border: none;
+    border-radius: 1rem;
+    color: #2a2c2d;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    width: 100px;
+    height: 30px;
+    margin-left: 4.2rem;
+    margin-right: -9rem;
+  }
+  
+
+.button {
+    font-weight: bold;
+    border-radius: 5px;
+    border: white solid 2px;
+    color: white;
+    padding: 4px 8px;
+    margin-top: 2rem;
+
+    cursor: pointer;
+}
+
+
+
+.set-alarm {
+    background-color: #000;
+}
+
+.clear-alarm {
+    background-color: #000;
+}

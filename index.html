@@ -35,6 +35,15 @@
         
     </section>
 
+    <section class="container">
+        <div id="clock"></div>
+        <input onchange="setAlarmTime(this.value)" name="alarmTime" type="time">
+        <div class="controls">
+            <button onclick="setAlarm()" class="button set-alarm">Ativar Alarme</button>
+            <button onclick="clearAlarm()" class="button clear-alarm">Desativar Alarme</button>
+        </div>
+    </section>
+
     <div class="footer-bottom">
         <p> Copyright &copy;2022 - Pedro Lucena</p>
     </div>

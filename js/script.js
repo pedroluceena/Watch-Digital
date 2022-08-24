@@ -1,7 +1,11 @@
-
+// Variaveis 
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
+const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
+audio.loop = true;
+let alarmTime = null;
+let alarmTimeout = null;
 
 // Logic Watch
 const watch = setInterval(function time() {
@@ -47,3 +51,35 @@ const hundleToggle = (e) => {
 
 toggleEl.addEventListener('click', hundleToggle);
 childToogleEl.addEventListener('click', hundleToggle);
+
+
+// alarme
+
+function setAlarmTime(value) {
+    alarmTime = value;
+    console.log(alarmTime);
+}
+
+function setAlarm() {
+    if(alarmTime) {
+        console.log(alarmTime, 'alarmtime') 
+        const current = new Date();
+        const timeToAlarm = new Date(alarmTime);
+
+        if (timeToAlarm > current) {
+            console.log(timeToAlarm, 'timeToAlarm')
+            const timeout = timeToAlarm.getTime() - current.getTime();
+            alarmTimeout = setTimeout(() => audio.play(), timeout);
+            alert('Alarm set');
+        }
+    }
+}
+
+function clearAlarm() {
+    audio.pause();
+    if (alarmTimeout) {
+        clearTimeout(alarmTimeout);
+        alert('Alarm cleared');
+    }
+}
+
