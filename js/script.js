@@ -2,10 +2,9 @@
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
-const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
+const audio = new Audio('../assets/sino.mp3');
 audio.loop = true;
 let alarmTime = null;
-let alarmTimeout = null;
 
 // Logic Watch
 const watch = setInterval(function time() {
@@ -14,8 +13,16 @@ const watch = setInterval(function time() {
     let min = dateToday.getMinutes();
     let s = dateToday.getSeconds();
 
-    hours.textContent = String(hr).padStart(2, '0');
-    minutes.textContent = String(min).padStart(2, '0');
+    const hourFormatted = String(hr).padStart(2, '0');
+    const minutesFormatted = String(min).padStart(2, '0');
+
+    if (`${hourFormatted}:${minutesFormatted}` === alarmTime) {
+        audio.play();
+        alarmTime = null;
+    }
+
+    hours.textContent = hourFormatted;
+    minutes.textContent = minutesFormatted;
     seconds.textContent = String(s).padStart(2, '0');
 })
 
@@ -53,33 +60,26 @@ toggleEl.addEventListener('click', hundleToggle);
 childToogleEl.addEventListener('click', hundleToggle);
 
 
-// alarme
+//Alarm 
 
 function setAlarmTime(value) {
     alarmTime = value;
-    console.log(alarmTime);
 }
 
 function setAlarm() {
     if(alarmTime) {
-        console.log(alarmTime, 'alarmtime') 
+        const [ hour, minute ] = alarmTime.split(":");
         const current = new Date();
-        const timeToAlarm = new Date(alarmTime);
+        const timeToAlarm = new Date();
+        timeToAlarm.setHours(hour);
+        timeToAlarm.setMinutes(minute);
+        if (hour < current.getHours().toString()) timeToAlarm.setDate(timeToAlarm.getDate() + 1);
 
-        if (timeToAlarm > current) {
-            console.log(timeToAlarm, 'timeToAlarm')
-            const timeout = timeToAlarm.getTime() - current.getTime();
-            alarmTimeout = setTimeout(() => audio.play(), timeout);
-            alert('Alarm set');
-        }
+        if (timeToAlarm > current) alert('Alarme Ativado');
     }
 }
 
 function clearAlarm() {
     audio.pause();
-    if (alarmTimeout) {
-        clearTimeout(alarmTimeout);
-        alert('Alarm cleared');
-    }
 }
 
