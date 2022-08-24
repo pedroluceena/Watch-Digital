@@ -2,7 +2,7 @@
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
-const audio = new Audio('../assets/sino.mp3');
+const audio = new Audio('./assets/sino.mp3');
 audio.loop = true;
 let alarmTime = null;
 
