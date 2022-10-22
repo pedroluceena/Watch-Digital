@@ -1,4 +1,4 @@
-#----------------------------- Watch-Digital---------------------------
+#Watch-Digital
 
 ## Sobre 
 Projeto feito para práticar conhecimentos em HTML,CSS E JavaScript.
