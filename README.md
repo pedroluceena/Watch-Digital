@@ -1,4 +1,5 @@
-#Watch-Digital
+# Watch Digital 
+Rélogio Digital com Sistema de Alarme e Dark Mode.
 
 ## Sobre 
 Projeto feito para práticar conhecimentos em HTML,CSS E JavaScript.
