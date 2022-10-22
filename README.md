@@ -5,7 +5,7 @@ Rélogio Digital com Sistema de Alarme e Dark Mode.
 Projeto feito para práticar conhecimentos em HTML,CSS E JavaScript.
 
 ## Inspiração 
-A ideia desse projeto surjiu por causa desse video!
+A ideia desse projeto veio por causa desse video!
 https://www.youtube.com/watch?v=GK0ok3ZCXwM
 
 ## Alterações 
